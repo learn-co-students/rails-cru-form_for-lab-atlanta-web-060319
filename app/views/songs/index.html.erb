@@ -1,0 +1,12 @@
+<h1>List of Songs</h1>
+
+<ul>
+  <% @songs.each do |song| %>
+    <li>
+      <%= link_to(song.name, song_path(song)) %><br>
+      <%= button_to("Delete!", song_path(song), method: :delete) %>
+
+  <% end %>
+</ul>
+
+ <%= link_to("Add a New Song", new_song_path) %>
